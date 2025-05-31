@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 const HomePage1 = () => {
+  const navigate=useNavigate();
   return (
     <div
       className="d-flex flex-column justify-content-center align-items-center text-center"
@@ -17,7 +19,7 @@ const HomePage1 = () => {
       />
       <h1 >Multibrand Car Service Management System</h1>
       <div className="d-flex gap-3">
-        <button className="btn btn-primary btn-lg">Login as User</button>
+        <button className="btn btn-primary btn-lg" onClick={()=>navigate('/Registerpage')}>Login as User</button>
         <button className="btn btn-success btn-lg">Login as Admin</button>
          <button className="btn btn-success btn-lg">Login as Employee</button>
       </div>
