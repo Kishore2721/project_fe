@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 
 
-function Registerpage(){
+function RegisterPage(){
     const navigate=useNavigate()
     return(
          <div
@@ -24,9 +24,9 @@ function Registerpage(){
               >
                 <i className="bi bi-arrow-left me-2"></i>Go Back
               </button>
-          <h1 >Register Here</h1>
+          <h1 >Hi User,Please Register Here</h1>
           
-          <i className="bi bi-table btn btn-info"> already registered?,then click here to go to Loginpage</i>
+          <i className="bi bi-table btn btn-info" onClick={()=>navigate('/LoginPage')}> already registered?,then click here to go to LoginPage</i>
         </div>
         <form className="form" method="post" >
           <div className="card-body">
@@ -51,6 +51,13 @@ function Registerpage(){
               className="form-control"
               
             />
+             <input
+              type="password"
+              name="userPassword" 
+              placeholder="set your password"
+              className="form-control mb-1"
+             
+            />
           </div>
           <div className="card-footer">
             <button className="btn btn-primary" type="submit">
@@ -64,4 +71,4 @@ function Registerpage(){
     )
     }
 
-    export default Registerpage
+    export default RegisterPage

@@ -19,9 +19,9 @@ const HomePage1 = () => {
       />
       <h1 >Multibrand Car Service Management System</h1>
       <div className="d-flex gap-3">
-        <button className="btn btn-primary btn-lg" onClick={()=>navigate('/Registerpage')}>Login as User</button>
-        <button className="btn btn-success btn-lg">Login as Admin</button>
-         <button className="btn btn-success btn-lg">Login as Employee</button>
+        <button className="btn btn-primary btn-lg" onClick={()=>navigate('/RegisterPage')}>Login as User</button>
+        <button className="btn btn-success btn-lg"onClick={()=>navigate('/AdminLogin')}>Login as Admin</button>
+         <button className="btn btn-success btn-lg" onClick={()=>navigate('/EmployeeLogin')}>Login as Employee</button>
       </div>
     </div>
   );
