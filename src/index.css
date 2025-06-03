@@ -66,3 +66,18 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+/* Make html and body take full viewport height and remove default margin */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+/* Optional: Make your main container also fill the height */
+#root > div {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

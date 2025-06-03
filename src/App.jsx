@@ -8,12 +8,15 @@ import EmployeeDetails from './components/EmployeeDetails';
 import EmployeeLogin from './components/EmployeeLogin';
 import AdminLogin from './components/AdminLogin';
 import AdminPage from './components/AdminPage';
+import FixMyRideHomepage from './components/FixMyRideHomepage';
 
 
 
 function App() {
   return(
-    <div style={{ minHeight: "200vh",  minWidth:"200vh"}}>
+    <div>
+
+   {/*</div> <div style={{ minHeight: "200vh",  minWidth:"200vh"}}>*/}
   <Router>
     <Routes>
       <Route path='/' element={<HomePage1/>}></Route>
@@ -25,6 +28,8 @@ function App() {
           <Route path='/EmployeeDetails' element={<EmployeeDetails/>}></Route>
           <Route path='/AdminLogin' element={<AdminLogin/>}></Route>
           <Route path='/AdminPage' element={<AdminPage/>}></Route>
+          <Route path='/FixMyRideHomepage' element={<FixMyRideHomepage/>}></Route>
+
     </Routes>
   </Router>
  </div>
