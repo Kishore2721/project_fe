@@ -1,4 +1,4 @@
-import HomePage1 from './components/HomePage1';
+import HomePage1 from './components/HomePage1'
 import Registerpage from './components/RegisterPage';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import LoginPage from './components/LoginPage';
@@ -16,7 +16,7 @@ function App() {
     <div style={{ minHeight: "200vh",  minWidth:"200vh"}}>
   <Router>
     <Routes>
-      <Route path='/' element={<HomePage1/>}></Route>
+        <Route path='/' element={<HomePage1 />}></Route>
          <Route path='/Registerpage' element={<Registerpage/>}></Route>
           <Route path='/LoginPage' element={<LoginPage/>}></Route>
           <Route path='/UserCarDetails' element={<UserCarDetails/>}></Route>
