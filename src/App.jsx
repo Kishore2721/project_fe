@@ -9,6 +9,9 @@ import EmployeeLogin from './components/EmployeeLogin';
 import AdminLogin from './components/AdminLogin';
 import AdminPage from './components/AdminPage';
 import FixMyRideHomepage from './components/FixMyRideHomepage';
+import Forgotpass from './components/Forgotpass';
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 
 
@@ -30,6 +33,7 @@ function App() {
           <Route path='/AdminPage' element={<AdminPage/>}></Route>
           <Route path='/' element={<FixMyRideHomepage/>}></Route>
 
+          <Route path='/ForgotPass' element={<Forgotpass/>}></Route>
     </Routes>
   </Router>
  </div>

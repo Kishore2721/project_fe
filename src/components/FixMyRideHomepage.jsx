@@ -163,12 +163,6 @@ export default function FixMyRideHomepage() {
           <a href="#" className="btn btn-outline-light mt-3" onClick={()=>navigate('/RegisterPage')}>
             Book a Service
           </a>
-           <a href="#" className="btn btn-outline-light mt-3" onClick={()=>navigate('/AdminLogin')}>
-            Admin-login
-          </a>
-          <a href="#" className="btn btn-outline-light mt-3" onClick={()=>navigate('/EmployeeLogin')}>
-            Employee-login
-          </a>
         </div>
       </section>
 
