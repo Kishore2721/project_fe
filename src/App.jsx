@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import HomePage1 from './components/HomePage1'
+import Registerpage from './components/RegisterPage';
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+import LoginPage from './components/LoginPage';
+import UserCarDetails from './components/UserCarDetails';
+import UserStatus from './components/UserStatus';
+import EmployeeDetails from './components/EmployeeDetails';
+import EmployeeLogin from './components/EmployeeLogin';
+import AdminLogin from './components/AdminLogin';
+import AdminPage from './components/AdminPage';
+import FixMyRideHomepage from './components/FixMyRideHomepage';
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  return(
+    <div>
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+   {/*</div> <div style={{ minHeight: "200vh",  minWidth:"200vh"}}>*/}
+  <Router>
+    <Routes>
+       
+         <Route path='/Registerpage' element={<Registerpage/>}></Route>
+          <Route path='/LoginPage' element={<LoginPage/>}></Route>
+          <Route path='/UserCarDetails' element={<UserCarDetails/>}></Route>
+          <Route path='/UserStatus' element={<UserStatus/>}></Route>
+          <Route path='/EmployeeLogin' element={<EmployeeLogin/>}></Route>
+          <Route path='/EmployeeDetails' element={<EmployeeDetails/>}></Route>
+          <Route path='/AdminLogin' element={<AdminLogin/>}></Route>
+          <Route path='/AdminPage' element={<AdminPage/>}></Route>
+          <Route path='/' element={<FixMyRideHomepage/>}></Route>
+
+    </Routes>
+  </Router>
+ </div>
   )
 }
 
-export default App
+export default App;
