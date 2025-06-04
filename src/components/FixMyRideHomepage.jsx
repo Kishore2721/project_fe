@@ -1,12 +1,13 @@
 import React from "react";
 import "./FixMyRideHomepage.css";
+import { useNavigate } from "react-router-dom";
 
 
 
 
 
 export default function FixMyRideHomepage() {
-    
+    const navigate=useNavigate();
   return (
     <div>
       {/* Carousel */}
@@ -158,13 +159,13 @@ export default function FixMyRideHomepage() {
         <div className="container text-center">
           <h2 className="mb-3">Get In Touch</h2>
           <p>📍 Trivandrum | ☎️ +91-9876543210 | 📧 support@fixmyride.com</p>
-          <a href="#" className="btn btn-outline-light mt-3">
+          <a href="#" className="btn btn-outline-light mt-3" onClick={()=>navigate('/RegisterPage')}>
             Book a Service
           </a>
-           <a href="#" className="btn btn-outline-light mt-3">
+           <a href="#" className="btn btn-outline-light mt-3" onClick={()=>navigate('/AdminLogin')}>
             Admin-login
           </a>
-          <a href="#" className="btn btn-outline-light mt-3">
+          <a href="#" className="btn btn-outline-light mt-3" onClick={()=>navigate('/EmployeeLogin')}>
             Employee-login
           </a>
         </div>

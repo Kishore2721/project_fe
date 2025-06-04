@@ -19,7 +19,7 @@ function App() {
    {/*</div> <div style={{ minHeight: "200vh",  minWidth:"200vh"}}>*/}
   <Router>
     <Routes>
-        <Route path='/' element={<HomePage1 />}></Route>
+       
          <Route path='/Registerpage' element={<Registerpage/>}></Route>
           <Route path='/LoginPage' element={<LoginPage/>}></Route>
           <Route path='/UserCarDetails' element={<UserCarDetails/>}></Route>
@@ -28,7 +28,7 @@ function App() {
           <Route path='/EmployeeDetails' element={<EmployeeDetails/>}></Route>
           <Route path='/AdminLogin' element={<AdminLogin/>}></Route>
           <Route path='/AdminPage' element={<AdminPage/>}></Route>
-          <Route path='/FixMyRideHomepage' element={<FixMyRideHomepage/>}></Route>
+          <Route path='/' element={<FixMyRideHomepage/>}></Route>
 
     </Routes>
   </Router>
