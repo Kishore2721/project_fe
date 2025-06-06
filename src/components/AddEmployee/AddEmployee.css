@@ -1,0 +1,17 @@
+.addempbg {
+  background-image: url('./addemployeebg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.headerfooter{
+    background-color: rgb(2, 2, 63);
+    color: white;
+}
+.addempbtn{
+    background-color: white;
+    color: rgb(2, 2, 63);;
+}
+.addempbtn:hover{
+    background-color: rgb(135, 135, 146);
+}
