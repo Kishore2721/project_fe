@@ -31,7 +31,7 @@ function RegisterPage() {
     <div
       style={{
         backgroundImage:
-          'url("https://thumbs.dreamstime.com/b/worker-uniform-disassembles-vehicle-engine-car-service-station-automobile-checking-inspection-professional-diagnostics-173424972.jpg")',
+          'url("https://wallpaperaccess.com/full/2085201.jpg")',
         backgroundSize: "cover",
         backgroundPosition: "center",
         minHeight: "5vh",
@@ -54,7 +54,7 @@ function RegisterPage() {
         }}
       >
         <h2 className="mb-3 fw-bold">Car Service Registration</h2>
-        <p className="text-muted">
+        <p className="text-muted" align='center'>
           Already have an account?{" "}
           <button
             className="btn btn-link p-0 m-0 align-baseline"

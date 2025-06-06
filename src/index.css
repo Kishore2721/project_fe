@@ -75,9 +75,9 @@ html, body, #root {
   overflow-x: hidden; /* prevent horizontal scroll */
 }
 
-/* Optional: Make your main container also fill the height */
-#root > div {
+
+/* #root > div {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
+} */
