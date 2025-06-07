@@ -12,7 +12,7 @@ function LoginPage() {
           {/* Left Arrow for Go Back */}
           <button
             className="btn btn-outline-light me-3"
-            onClick={() => navigate(-1)}
+            onClick={() => navigate('/')}
           >
             ←
           </button>

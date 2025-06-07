@@ -36,7 +36,7 @@ function UserCarDetails() {
               className="btn btn-warning me-3"
               onClick={() => navigate("/LoginPage")}
             >
-              <i className="bi bi-arrow-left me-2"></i>Go Back
+              <i className="bi bi-arrow-left me-2"></i>
             </button>
             <div className="flex-grow-1 text-center">
               <h1 className="m-0 fs-4">Welcome, please fill in the details</h1>
@@ -79,12 +79,7 @@ function UserCarDetails() {
                 <option value="Special Complaint">Special Complaint</option>
               </select>
 
-              <input
-                type="text"
-                name="specialnotes"
-                placeholder="Special notes on vehicle"
-                className="form-control mb-2"
-              />
+              
 
               <DatePicker
                 selected={appointmentDate}

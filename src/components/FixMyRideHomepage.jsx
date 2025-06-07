@@ -86,7 +86,7 @@ export default function FixMyRideHomepage() {
             <video
               src="/car-video1.mp4"
               autoPlay
-              muted
+             muted
               loop
               style={{ width: "100%", height: "90vh", objectFit: "cover" }}
             ></video>
@@ -173,7 +173,7 @@ export default function FixMyRideHomepage() {
       <section className="bg-dark text-white py-5" id="contact">
         <div className="container text-center">
           <h2 className="mb-3">Get In Touch</h2>
-          <p>📍 Trivandrum | ☎️ +91-9876543210 | 📧 support@fixmyride.com</p>
+          <p>📍 Trivandrum | ☎️ +91-9846706315 | 📧 support@fixmyride.com</p>
           <a href="#" className="btn btn-outline-light mt-3" onClick={() => navigate('/RegisterPage')}>
             Book a Service
           </a>

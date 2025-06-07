@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
+
 
 function RegisterPage() {
   const navigate = useNavigate();
@@ -30,17 +29,16 @@ function RegisterPage() {
   return (
     <div
       style={{
-        backgroundImage:
-          'url("https://wallpaperaccess.com/full/2085201.jpg")',
+        backgroundImage: 'url("https://wallpaperaccess.com/full/2085201.jpg")',
         backgroundSize: "cover",
         backgroundPosition: "center",
-        minHeight: "5vh",
+        minHeight: "100vh",
         width: "100vw",
-        paddingTop: "60px",
-        paddingBottom: "60px",
         display: "flex",
         justifyContent: "center",
+        alignItems: "center",
         overflowY: "auto",
+        padding: "20px",
       }}
     >
       <div
@@ -53,16 +51,16 @@ function RegisterPage() {
           boxShadow: "0 0 15px rgba(0,0,0,0.3)",
         }}
       >
-        <h2 className="mb-3 fw-bold">Car Service Registration</h2>
-        <p className="text-muted" align='center'>
-          Already have an account?{" "}
+        {/* Top Row: Go Back button + Heading */}
+        <div className="d-flex align-items-center mb-3">
           <button
-            className="btn btn-link p-0 m-0 align-baseline"
-            onClick={() => navigate("/LoginPage")}
+            className="btn btn-warning me-2"
+            onClick={() => navigate("/")}
           >
-            Login here
+            <i className="bi bi-arrow-left me-2"></i>
           </button>
-        </p>
+          <h2 className="fw-bold mb-0">Car Service Registration</h2>
+        </div>
 
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -117,25 +115,23 @@ function RegisterPage() {
             />
           </div>
 
-          <div className="d-flex justify-content-between align-items-center mb-3">
-            
-          </div>
-
-          <button type="submit" className="btn btn-primary w-100">
+          <button type="submit" className="btn btn-primary w-100 mb-3">
             Register
           </button>
-        </form>
 
-        <button
-          className="btn btn-secondary mt-3"
-          onClick={() => navigate("/")}
-        >
-          <i className="bi bi-arrow-left me-2"></i> Go Back
-        </button>
+          <p className="text-muted text-center">
+            Already have an account?{" "}
+            <button
+              className="btn btn-link p-0 m-0 align-baseline"
+              onClick={() => navigate("/LoginPage")}
+            >
+              Login here
+            </button>
+          </p>
+        </form>
       </div>
     </div>
   );
 }
 
 export default RegisterPage;
-
