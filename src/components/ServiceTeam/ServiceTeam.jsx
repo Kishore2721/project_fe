@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Card, Row, Col, Button, Container, CardFooter, CardBody } from "react-bootstrap";
+import { Card, Row, Col, CardFooter, CardBody } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import './ServiceTeam.css'
@@ -52,14 +52,14 @@ const ServiceTeam = ({employees,setEmployees}) => {
           </div>
         </Card.Header> */}
 
-        <Row xs={1} md={4} className="g-2">
+        <Row xs={1} md={5} className="g-2">
           {employees.map((emp) => (
             <Col key={emp.id}>
               <Card.Body >
                 <div className="card m-2 ">
                   {/* <h4>Name:{emp.name}</h4> */}
                   <h4>
-                    <Card.Header style={{ backgroundColor: "burlywood" }}>
+                    <Card.Header className="service-team-card-bg text-white">
                       {emp.firstName}{emp.lastName}
                     </Card.Header>
                   </h4>
@@ -67,11 +67,11 @@ const ServiceTeam = ({employees,setEmployees}) => {
 
                   <h6>ID: {emp.id}</h6>
                   <h6>Place: {emp.state}</h6>
-                  <h6>Contact Number: {emp.contactNumber}</h6>
-                  <h6>Joined Date: {emp.joinDate}</h6>
+                  <h6>Contact: {emp.contactNumber}</h6>
+                  <h6>Joined: {emp.joinDate}</h6>
                   </CardBody>
                   <CardFooter className="text-center">
-                  <Button className="btn btn-danger" type="submit" onClick={()=>handleDelete(emp.id)}>Delete</Button>
+                  <button className="delete-btn rounded-2 text-white" type="submit" onClick={()=>handleDelete(emp.id)}>Delete</button>
               </CardFooter>
                 </div>
               </Card.Body>

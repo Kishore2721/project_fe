@@ -1,3 +1,25 @@
 .icon {
   font-size: 25px;
 }
+.bg-image {
+  background-image: url('./bg_img.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-color{
+  background-color:#124363;
+  color: white;
+}
+.btn-color{
+  margin-top: 50px;
+}
+.btn-color:hover{
+  background-color: #3D9970;
+}
+.card-bg{
+   background-color:		#e5e9ea;
+}
+.card-width{
+  width: 200px;
+}

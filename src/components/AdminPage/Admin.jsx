@@ -175,31 +175,37 @@ const Admin = () => {
   // }
   return (
     <div
-      className="min-vh-100 d-flex justify-content-center align-items-start"
-      // style={{ height: "70vh" }}
+      className="min-vh-100 d-flex justify-content-center align-items-start bg-image"
     >
-      <Container className="w-100 mt-4">
-        <Card>
-          <Card.Header className="d-flex align-items-center">
-            <i className="bi bi-arrow-left icon me-2"></i>
+      <Container className="w-100 mt-4 mb-3">
+        <Card  bg="light">
+           {/* style={{ backgroundColor: "rgba(255, 255, 255, 0.9)"}} */}
+          <Card.Header className="d-flex align-items-center bg-color">
+            <i className="bi bi-arrow-left icon me-2 "></i>
             <h1>Admin Control Panel</h1>
           </Card.Header>
 
           <Card.Body>
-            <Card>
+            <Card className="card-bg ms-2 me-2" >
 
             <div className=" d-flex justify-content-around mb-4 mt-4">
-              <Card bg="primary" className="p-3 shadow-sm rounded-3 text-white">
-                <h6>Total Employees</h6>
+              <Card bg="primary" className="p-3 shadow-sm rounded-3 text-white align-items-center card-width">
+                <i class="bi bi-people-fill icon "></i>
+                <div className="text-center">
+                  <h6>Total Employees</h6>
                 <h3>{employees?.length || 0}</h3>
+                </div>
               </Card>
-              <Card bg="primary" className="p-3 shadow-sm rounded-3 text-white">
-                <h6>Active Service</h6>
+              <Card bg="primary" className="p-3 shadow-sm rounded-3 text-white align-items-center card-width">
+                <i class="bi bi-gear-fill icon"></i>
+                <div className="text-center">
+                  <h6>Total Service</h6>
                 <h3>{serviceRequest?.length || 0}</h3>
+                </div>
               </Card>
-              <div className=" mt-5">
-                <Button
-                className="btn btn-primary me-5"
+              <div className=" mt-5 ">
+                <button
+                className="btn btn-primary me-5 btn-color "
                 onClick={() =>
                   navigate("/addemployee", {
                     state: {
@@ -207,13 +213,15 @@ const Admin = () => {
                     },
                   })
                 }
-                >
+                > 
+                  <i class="bi bi-plus me-2"></i>
                 Add Employee
-              </Button>
+              </button>
               <button
-                className="btn btn-primary rounded-3 ms-5"
+                className="btn btn-primary rounded-3 ms-5 btn-color"
                 onClick={() => navigate("/servicerequest")}
                 >
+                  <i className="bi bi-eye me-2"></i>
                 View Service Request
               </button>
               </div>

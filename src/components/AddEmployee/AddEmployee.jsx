@@ -83,12 +83,12 @@ const AddEmployee = () => {
   };
 
   return (
-    <div className="min-vh-100 d-flex align-items-center justify-content-center  addempbg">
+    <div className="min-vh-100 d-flex align-items-center justify-content-center  add-emp-bg">
 
     <Container className="w-50 ">
       <Card >
-        <CardHeader className="text-center headerfooter d-flex align-items-center">
-          <i className="bi bi-arrow-left me-2" onClick={goback}></i>
+        <CardHeader className="text-center d-flex align-items-center admin-header-bg">
+          <i className="bi bi-arrow-left me-2 icon" onClick={goback}></i>
           <h1 className="text-center">Add New Employee</h1>
           
           </CardHeader>
@@ -189,8 +189,8 @@ const AddEmployee = () => {
                   {message}
                 </span>
           </CardBody>
-          <CardFooter className="text-center headerfooter">
-                <Button type="submit" className="w-25 addempbtn">Add</Button>
+          <CardFooter className="text-center admin-header-bg">
+                <Button type="submit" className=" add-emp-btn">Add</Button>
           </CardFooter>
         </Form>
         

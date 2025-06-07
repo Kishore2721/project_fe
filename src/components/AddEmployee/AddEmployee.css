@@ -1,17 +1,23 @@
-.addempbg {
-  background-image: url('./addemployeebg.jpg');
+.add-emp-bg {
+  background-image: url('./bg_img.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-.headerfooter{
-    background-color: rgb(2, 2, 63);
-    color: white;
+.icon {
+  font-size: 25px;
 }
-.addempbtn{
-    background-color: white;
-    color: rgb(2, 2, 63);;
+.admin-header-bg{
+    background-color: #124363;
+   color: white;
 }
-.addempbtn:hover{
-    background-color: rgb(135, 135, 146);
+
+.add-emp-btn{
+     background-color: white;
+     color: black;
+     margin: 10px;
+     width: 100px;
+}
+.add-emp-btn:hover{
+    background-color: #3D9970;
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Card, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Table from "react-bootstrap/Table";
+import './ServiceRequest.css'
 
 const ServiceRequest = () => {
   const [user,setUser] = useState(
@@ -101,13 +102,15 @@ const ServiceRequest = () => {
   const navigate = useNavigate();
 
   return (
-    <Container className="w-75 mt-5">
+    <div className="min-vh-100 d-flex align-items-center justify-content-center request-bg-img">
+
+    <Container className="w-100 mt-5 mb-4">
       <Card>
-        <Card.Header className="d-flex align-items-center">
+        <Card.Header className="d-flex align-items-center request-header-bg">
           <i
-            className="bi bi-arrow-left btn btn-warning me-2"
+            className="bi bi-arrow-left me-2 icon"
             onClick={() => navigate("/", { state: { serviceRequests: user }})}
-          ></i>
+            ></i>
           <h1>Service Request</h1>
         </Card.Header>
 
@@ -152,6 +155,7 @@ const ServiceRequest = () => {
         </Card.Body>
       </Card>
     </Container>
+    </div>
   );
 };
 

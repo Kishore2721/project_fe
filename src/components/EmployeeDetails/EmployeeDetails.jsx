@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardBody, CardHeader, Container, Table } from "react-bootstrap";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import './EmployeeDetails.css'
 
 const EmployeeDetails = () => {
   const navigate = useNavigate();
@@ -9,11 +10,15 @@ const EmployeeDetails = () => {
   const employee = location.state;
   // const emp = employee.filter((e)=>e.id === param.id);
   return (
+      <div className="min-vh-100 d-flex align-items-start emp-detaisl-bg">
+
     <Container className="w-75 mt-5 ">
       <Card>
-        <Card.Header className="text-center d-flex align-items-center justify-content-between">
-          <i className="bi bi-arrow-left " onClick={()=>navigate('/')}></i>
-           <Button className="btn btn-primary">Assign work</Button>
+        <Card.Header className="text-center d-flex align-items-center justify-content-between emp-details-header">
+          <div className="d-flex align-items-center">
+             <i className="bi bi-arrow-left icon me-2" onClick={()=>navigate('/')}></i>
+           <h1>Work History</h1>
+          </div>
           <strong> Employee ID : {employee.id}</strong>
         </Card.Header>
         <Card.Body>
@@ -27,7 +32,7 @@ const EmployeeDetails = () => {
           </div>
          
          <Card>
-             <CardHeader className='d-flex align-items-center justify-content-between'>
+             <CardHeader className='d-flex align-items-center justify-content-between emp-details-header-2'>
                 <h5>Customer ID :</h5>
                
              </CardHeader>
@@ -70,6 +75,7 @@ const EmployeeDetails = () => {
       </Card>
     </Container>
     
+      </div>
   );
 };
 
