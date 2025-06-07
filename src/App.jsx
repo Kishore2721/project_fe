@@ -9,6 +9,8 @@ import EmployeeLogin from './components/EmployeeLogin';
 import AdminLogin from './components/AdminLogin';
 import AdminPage from './components/AdminPage';
 import FixMyRideHomepage from './components/FixMyRideHomepage';
+import EmployeeWorkStatusPage from './components/EmployeeWorkStatusPage';
+
 
 
 
@@ -28,6 +30,7 @@ function App() {
           <Route path='/EmployeeDetails' element={<EmployeeDetails/>}></Route>
           <Route path='/AdminLogin' element={<AdminLogin/>}></Route>
           <Route path='/AdminPage' element={<AdminPage/>}></Route>
+          <Route path='/EmployeeWorkStatusPage' element={<EmployeeWorkStatusPage/>}></Route>
           <Route path='/' element={<FixMyRideHomepage/>}></Route>
 
     </Routes>
