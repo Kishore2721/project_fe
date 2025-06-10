@@ -1,4 +1,4 @@
-import HomePage1 from './components/HomePage1'
+
 import Registerpage from './components/RegisterPage';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import LoginPage from './components/LoginPage';
@@ -10,6 +10,8 @@ import AdminLogin from './components/AdminLogin';
 import AdminPage from './components/AdminPage';
 import FixMyRideHomepage from './components/FixMyRideHomepage';
 import EmployeeWorkStatusPage from './components/EmployeeWorkStatusPage';
+import Employee from './components/Employee';
+import UpdateEmployee from './components/UpdateEmployee';
 
 
 
@@ -30,6 +32,8 @@ function App() {
           <Route path='/EmployeeDetails' element={<EmployeeDetails/>}></Route>
           <Route path='/AdminLogin' element={<AdminLogin/>}></Route>
           <Route path='/AdminPage' element={<AdminPage/>}></Route>
+             <Route path='/Employee' element={<Employee/>}></Route>
+              <Route path='/UpdateEmployee' element={<UpdateEmployee/>}></Route>
           <Route path='/EmployeeWorkStatusPage' element={<EmployeeWorkStatusPage/>}></Route>
           <Route path='/' element={<FixMyRideHomepage/>}></Route>
 

@@ -79,12 +79,7 @@ function UserCarDetails() {
                 <option value="Special Complaint">Special Complaint</option>
               </select>
 
-              <input
-                type="text"
-                name="specialnotes"
-                placeholder="Special notes on vehicle"
-                className="form-control mb-2"
-              />
+              
 
               <DatePicker
                 selected={appointmentDate}
