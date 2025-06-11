@@ -115,9 +115,10 @@ function LoginPage() {
               />
 
 
-            <div className="d-grid mb-3">
+            <div className="d-grid mb-4">
               <button
                 type="button"
+                padding ="50px"
                 className="btn btn-primary"
                 onClick={() => navigate("/UserCarDetails")}
               >
@@ -131,4 +132,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default LoginPage;    
