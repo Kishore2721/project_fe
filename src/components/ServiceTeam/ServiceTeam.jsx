@@ -4,13 +4,13 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import './ServiceTeam.css'
 
-const ServiceTeam = ({employees,setEmployees}) => {
+const ServiceTeam = ({ employees, setEmployees }) => {
   const navigate = useNavigate();
- 
+
 
   // const[addedEmp ,setAddedEmp] = useState()
 
-  const location=useLocation();
+  const location = useLocation();
   // useEffect(()=>{
   //   if(location.state){
   //     if(location.state.addedEmployee){
@@ -29,18 +29,18 @@ const ServiceTeam = ({employees,setEmployees}) => {
   // });
   // };
 
-  const handleDelete=(id)=>{
+  const handleDelete = (id) => {
     const deleteEmployee = employees.filter((empId) => empId.id !== id)
     setEmployees(deleteEmployee);
   }
 
   return (
-      <div className=" ">
-        {/* min-vh-100  d-flex align-items-center justify-content-center  service-team-bg */}
-    {/* <Container className="m-5" >   */}
-      
+    <div className=" ">
+      {/* min-vh-100  d-flex align-items-center justify-content-center  service-team-bg */}
+      {/* <Container className="m-5" >   */}
+
       {/* <Card> */}
-        {/* <Card.Header className="d-flex justify-content-between align-items-center">
+      {/* <Card.Header className="d-flex justify-content-between align-items-center">
           <div className="d-flex align-items-center ">
             <i className="bi bi-arrow-left btn icon me-2" onClick={goback}></i>
             <h1>Service Team</h1>
@@ -52,36 +52,34 @@ const ServiceTeam = ({employees,setEmployees}) => {
           </div>
         </Card.Header> */}
 
-        <Row xs={1} md={5} className="g-2">
-          {employees.map((emp) => (
-            <Col key={emp.id}>
-              <Card.Body >
-                <div className="card m-2 ">
-                  {/* <h4>Name:{emp.name}</h4> */}
-                  <h4>
-                    <Card.Header className="service-team-card-bg text-white">
-                      {emp.firstName}{emp.lastName}
-                    </Card.Header>
-                  </h4>
-                  <CardBody onClick={() => navigate("/employeedetails", { state: emp })}>
-
+      <Row xs={1} md={5} className="g-2">
+        {employees.map((emp) => (
+          <Col key={emp.id}>
+            <Card.Body >
+              <div className="card m-2 ">
+                {/* <h4>Name:{emp.name}</h4> */}
+                <h4>
+                  <Card.Header className="service-team-card-bg text-white">
+                    {emp.firstName}{emp.lastName}
+                  </Card.Header>
+                </h4>
+                <CardBody onClick={() => navigate("/employeedetails", { state: emp })}>
                   <h6>ID: {emp.id}</h6>
                   <h6>Place: {emp.state}</h6>
                   <h6>Contact: {emp.contactNumber}</h6>
                   <h6>Joined: {emp.joinDate}</h6>
-                  </CardBody>
-                  <CardFooter className="text-center">
-                  <button className="delete-btn rounded-2 text-white" type="submit" onClick={()=>handleDelete(emp.id)}>Delete</button>
-              </CardFooter>
-                </div>
-              </Card.Body>
-              
-            </Col>
-          ))}
-        </Row>
-      {/* </Card> */}
-    {/* // </Container> */}
+                </CardBody>
+                <CardFooter className="text-center">
+                  <button className="delete-btn rounded-2 text-white" type="submit" onClick={() => handleDelete(emp.id)}>Delete</button>
+                </CardFooter>
               </div>
+            </Card.Body>
+          </Col>
+        ))}
+      </Row>
+      {/* </Card> */}
+      {/* // </Container> */}
+    </div>
   );
 };
 
