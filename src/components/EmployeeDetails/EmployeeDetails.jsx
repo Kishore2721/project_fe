@@ -8,7 +8,6 @@ const EmployeeDetails = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const employee = location.state;
-  // const emp = employee.filter((e)=>e.id === param.id);
   return (
       <div className="min-vh-100 d-flex align-items-start emp-detaisl-bg">
 
