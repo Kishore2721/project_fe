@@ -16,10 +16,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 
 function App() {
+
   return(
     <div>
 
-   {/*</div> <div style={{ minHeight: "200vh",  minWidth:"200vh"}}>*/}
+   
   <Router>
     <Routes>
        
@@ -37,7 +38,8 @@ function App() {
     </Routes>
   </Router>
  </div>
-  )
+
+ 
 }
 
 export default App;
