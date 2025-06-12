@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card, Container, Button } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Admin.css";
-import ServiceTeam from "../ServiceTeam/ServiceTeam";
+import ServiceTeam from "./ServiceTeam";
 
 const Admin = () => {
   const [employees, setEmployees] = useState([

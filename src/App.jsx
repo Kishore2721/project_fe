@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import ServiceRequest from './components/ServiceRequest/ServiceRequest';
-import ServiceTeam from './components/ServiceTeam/ServiceTeam';
-import EmployeeDetails from './components/EmployeeDetails/EmployeeDetails';
-import AddEmployee from './components/AddEmployee/AddEmployee';
-import Admin from "./components/AdminPage/Admin"
+import ServiceRequest from './components/ServiceRequest';
+import ServiceTeam from './components/ServiceTeam';
+import EmployeeDetails from './components/EmployeeDetails';
+import AddEmployee from './components/AddEmployee';
+import Admin from "./components/Admin"
 
 function App() {
   
