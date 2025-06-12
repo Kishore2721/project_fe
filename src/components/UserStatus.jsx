@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+/*import { useNavigate } from "react-router-dom";
 
 function UserStatus() {
   const navigate = useNavigate();
@@ -39,6 +39,7 @@ function UserStatus() {
                 <tr>
                   <th>User Name</th>
                   <th>Vehicle Model</th>
+                  <th>registration Time and Date</th>
                   <th>Work Completed</th>
                   <th>Will be Completed by</th>
                 </tr>
@@ -97,4 +98,100 @@ function UserStatus() {
   );
 }
 
+export default UserStatus;*/
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import './Employee.css'; // reuse same styling
+
+function UserStatus() {
+  const navigate = useNavigate();
+
+  const userAppointments = [
+    {
+      appointmentDate: "2025-05-25 10:30 AM",
+      customerName: "Vishnu Dethan",
+      contactNumber: "9876543210",
+      city: "Trivandrum",
+      vehicleModel: "Ford Figo",
+      registrationNumber: "KL21Q3860",
+      serviceType: "General Service",
+      status: "Completed",
+    },
+  ];
+
+  return (
+    <div
+      style={{
+        backgroundImage: `url("https://wallpapers.com/images/hd/full-hd-car-black-lamborghini-tahul7hyi0cfet43.jpg")`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        minHeight: "100vh",
+        padding: "2rem",
+        fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+        color: "white",
+        backgroundColor: "#000",
+      }}
+    >
+      <div className="container w-75 mt-5">
+        <div className="card">
+          <div className="card-header text-center d-flex align-items-center justify-content-between">
+            <button className="btn btn-warning ms-2" >
+              <i className="bi bi-arrow-left me-2"></i>Go Back
+            </button>
+            <h2 className="m-0">Appointment Status</h2>
+            <div style={{ width: '120px' }}></div> {/* for layout balance */}
+          </div>
+
+          <div className="card-body">
+            <div className="card mb-3">
+              <div className="card-header bg-primary text-white">
+                <h5 className="m-0">Customer ID:</h5>
+              </div>
+              <div className="card-body">
+                <table className="table table-striped table-bordered table-hover text-center">
+                  <thead>
+                    <tr>
+                      <th>Appointment Date & Time</th>
+                      <th>Customer Name</th>
+                      <th>Contact Number</th>
+                      <th>Customer City</th>
+                      <th>Vehicle Model</th>
+                      <th>Registration Number</th>
+                      <th>Service Type</th>
+                      <th>Status</th>
+                       <th>Completion Date&Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {userAppointments.map((appointment, index) => (
+                      <tr key={index}>
+                        <td>{appointment.appointmentDate}</td>
+                        <td>{appointment.customerName}</td>
+                        <td>{appointment.contactNumber}</td>
+                        <td>{appointment.city}</td>
+                        <td>{appointment.vehicleModel}</td>
+                        <td>{appointment.registrationNumber}</td>
+                        <td>{appointment.serviceType}</td>
+                        <td>
+                         
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div className="card-footer text-end">
+            <button className="btn btn-primary">Back to Dashboard</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default UserStatus;
+

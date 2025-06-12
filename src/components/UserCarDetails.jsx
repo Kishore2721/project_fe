@@ -65,7 +65,12 @@ function UserCarDetails() {
                 placeholder="Enter your Vehicle Model"
                 className="form-control mb-2"
               />
-
+                <input
+                type="text"
+                name="vehicleNumber"
+                placeholder=" vehicle registration number"
+                className="form-control mb-2"
+              />
               <select
                 name="ServiceType"
                 className="form-control mb-2"
@@ -78,17 +83,27 @@ function UserCarDetails() {
                 <option value="Periodic">Periodic</option>
                 <option value="Special Complaint">Special Complaint</option>
               </select>
-
+               <input
+                type="text"
+                name="Place"
+                placeholder="Enter your place"
+                className="form-control mb-2"
+              />
               
 
               <DatePicker
-                selected={appointmentDate}
-                onChange={(date) => setAppointmentDate(date)}
-                className="form-control mb-2"
-                placeholderText="Select Appointment Date"
-                dateFormat="yyyy-MM-dd"
-                name="appointmentDate"
-              />
+              selected={appointmentDate}
+              onChange={(date) => setAppointmentDate(date)}
+              className="form-control mb-2"
+              placeholderText="Select Appointment Date & Time"
+              dateFormat="yyyy-MM-dd h:mm aa" // Example: 2025-06-12 2:30 PM
+              showTimeSelect
+              timeFormat="HH:mm"
+              timeIntervals={15}
+              timeCaption="Time"
+              name="appointmentDate"
+/>
+
             </div>
 
             <div className="card-footer text-center d-flex flex-column gap-2">
