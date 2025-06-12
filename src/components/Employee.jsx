@@ -54,6 +54,7 @@ const Employee = () => {
                       <th>Service Type</th>
                       <th>Status</th>
                       <th>Completion Date&Time</th>
+                      <th>Bill Amount</th>
                     </tr>
                   </thead>
                   <tbody>

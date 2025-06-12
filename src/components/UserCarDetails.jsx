@@ -110,9 +110,8 @@ function UserCarDetails() {
               <button className="btn btn-primary" type="submit">
                 Click here to take Appointment
               </button>
-              <a href="/UserStatus" className="btn btn-info">
-                <i className="bi bi-table me-2"></i>
-                Already registered for appointment? Click here to check your status
+              <a href="/UserStatus" >
+               Already registered for appointment? Click here to check your status
               </a>
             </div>
           </form>
