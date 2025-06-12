@@ -99,7 +99,7 @@ function UserStatus() {
 }
 
 export default UserStatus;*/
-import React from "react";
+
 import { useNavigate } from "react-router-dom";
 import './Employee.css'; // reuse same styling
 
@@ -116,7 +116,36 @@ function UserStatus() {
       registrationNumber: "KL21Q3860",
       serviceType: "General Service",
       status: "Completed",
+      completionDate: "2025-05-26 12:30 PM",
+      billAmount: "2500"
     },
+  ];
+
+  const previousWorks = [
+    {
+      appointmentDate: "2024-12-12 09:00 AM",
+      customerName: "Vishnu Dethan",
+      contactNumber: "9876543210",
+      city: "Trivandrum",
+      vehicleModel: "Ford Figo",
+      registrationNumber: "KL21Q3860",
+      serviceType: "Engine Tuning",
+      status: "Completed",
+      completionDate: "2024-12-12 01:00 PM",
+      billAmount: "1800"
+    },
+    {
+      appointmentDate: "2024-04-10 11:00 AM",
+      customerName: "Vishnu Dethan",
+      contactNumber: "9876543210",
+      city: "Trivandrum",
+      vehicleModel: "Ford Figo",
+      registrationNumber: "KL21Q3860",
+      serviceType: "Brake Pad Replacement",
+      status: "Completed",
+      completionDate: "2024-04-10 02:00 PM",
+      billAmount: "2200"
+    }
   ];
 
   return (
@@ -136,15 +165,16 @@ function UserStatus() {
       <div className="container w-75 mt-5">
         <div className="card">
           <div className="card-header text-center d-flex align-items-center justify-content-between">
-            <button className="btn btn-warning ms-2" >
+            <button className="btn btn-warning ms-2" onClick={() => navigate("/LoginPage")}>
               <i className="bi bi-arrow-left me-2"></i>Go Back
             </button>
             <h2 className="m-0">Appointment Status</h2>
-            <div style={{ width: '120px' }}></div> {/* for layout balance */}
+            <div style={{ width: '120px' }}></div>
           </div>
 
           <div className="card-body">
-            <div className="card mb-3">
+            {/* Current Appointment Table */}
+            <div className="card mb-4">
               <div className="card-header bg-primary text-white">
                 <h5 className="m-0">Customer ID:</h5>
               </div>
@@ -159,8 +189,9 @@ function UserStatus() {
                       <th>Vehicle Model</th>
                       <th>Registration Number</th>
                       <th>Service Type</th>
+                      <th>Bill Amount</th>
                       <th>Status</th>
-                       <th>Completion Date&Time</th>
+                      <th>Completion Date & Time</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -173,9 +204,50 @@ function UserStatus() {
                         <td>{appointment.vehicleModel}</td>
                         <td>{appointment.registrationNumber}</td>
                         <td>{appointment.serviceType}</td>
-                        <td>
-                         
-                        </td>
+                        <td>{appointment.billAmount}</td>
+                        <td>{appointment.status}</td>
+                        <td>{appointment.completionDate}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Previous Works Table */}
+            <div className="card mb-3">
+              <div className="card-header bg-dark text-white">
+                <h5 className="m-0">Previous Works</h5>
+              </div>
+              <div className="card-body">
+                <table className="table table-striped table-bordered table-hover text-center">
+                  <thead>
+                    <tr>
+                      <th>Appointment Date & Time</th>
+                      <th>Customer Name</th>
+                      <th>Contact Number</th>
+                      <th>Customer City</th>
+                      <th>Vehicle Model</th>
+                      <th>Registration Number</th>
+                      <th>Service Type</th>
+                      <th>Bill Amount</th>
+                      <th>Status</th>
+                      <th>Completion Date & Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {previousWorks.map((work, index) => (
+                      <tr key={index}>
+                        <td>{work.appointmentDate}</td>
+                        <td>{work.customerName}</td>
+                        <td>{work.contactNumber}</td>
+                        <td>{work.city}</td>
+                        <td>{work.vehicleModel}</td>
+                        <td>{work.registrationNumber}</td>
+                        <td>{work.serviceType}</td>
+                        <td>{work.billAmount}</td>
+                        <td>{work.status}</td>
+                        <td>{work.completionDate}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -185,7 +257,9 @@ function UserStatus() {
           </div>
 
           <div className="card-footer text-end">
-            <button className="btn btn-primary">Back to Dashboard</button>
+            <button className="btn btn-primary" onClick={() => navigate("/")}>
+              Back to Dashboard
+            </button>
           </div>
         </div>
       </div>
