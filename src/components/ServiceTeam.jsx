@@ -6,29 +6,7 @@ import './ServiceTeam.css'
 
 const ServiceTeam = ({ employees, setEmployees }) => {
   const navigate = useNavigate();
-
-
-  // const[addedEmp ,setAddedEmp] = useState()
-
   const location = useLocation();
-  // useEffect(()=>{
-  //   if(location.state){
-  //     if(location.state.addedEmployee){
-  //       setEmployees(location.state.addedEmployee);
-  //     }
-  //     if(location.state.employees){
-  //       setEmployees(location.state.employees);
-  //     }
-  //   }
-  // },[location.state])
-
-  // const goback =()=>{
-  //   navigate('/',{state:{
-  //     employees:employees
-  //   }
-  // });
-  // };
-
   const handleDelete = (id) => {
     const deleteEmployee = employees.filter((empId) => empId.id !== id)
     setEmployees(deleteEmployee);
@@ -36,22 +14,6 @@ const ServiceTeam = ({ employees, setEmployees }) => {
 
   return (
     <div className=" ">
-      {/* min-vh-100  d-flex align-items-center justify-content-center  service-team-bg */}
-      {/* <Container className="m-5" >   */}
-
-      {/* <Card> */}
-      {/* <Card.Header className="d-flex justify-content-between align-items-center">
-          <div className="d-flex align-items-center ">
-            <i className="bi bi-arrow-left btn icon me-2" onClick={goback}></i>
-            <h1>Service Team</h1>
-          </div>
-          <div className="me-3">
-            <Button className="btn btn-primary" onClick={()=>navigate("/addemployee" ,
-              {state:{
-              employees:employees}})}>Add Employee</Button>
-          </div>
-        </Card.Header> */}
-
       <Row xs={1} md={5} className="g-2">
         {employees.map((emp) => (
           <Col key={emp.id}>
@@ -60,13 +22,13 @@ const ServiceTeam = ({ employees, setEmployees }) => {
                 {/* <h4>Name:{emp.name}</h4> */}
                 <h4>
                   <Card.Header className="service-team-card-bg text-white">
-                    {emp.firstName}{emp.lastName}
+                    {emp.name}
                   </Card.Header>
                 </h4>
                 <CardBody onClick={() => navigate("/employeedetails", { state: emp })}>
                   <h6>ID: {emp.id}</h6>
                   <h6>Place: {emp.state}</h6>
-                  <h6>Contact: {emp.contactNumber}</h6>
+                  <h6>Contact: {emp.phone}</h6>
                   <h6>Joined: {emp.joinDate}</h6>
                 </CardBody>
                 <CardFooter className="text-center">
@@ -77,8 +39,6 @@ const ServiceTeam = ({ employees, setEmployees }) => {
           </Col>
         ))}
       </Row>
-      {/* </Card> */}
-      {/* // </Container> */}
     </div>
   );
 };

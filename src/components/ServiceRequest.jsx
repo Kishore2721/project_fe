@@ -122,6 +122,7 @@ const ServiceRequest = () => {
                 <th>Customer Name</th>
                 <th>Contact Number</th>
                 <th>Customer city</th>
+                <th>Registration Number</th>
                 <th>Vehicle Model</th>
                 <th>Appointment Date</th>
                 <th>Service Type</th>
@@ -136,6 +137,7 @@ const ServiceRequest = () => {
                 <td>{user.customerName}</td>
                 <td>{user.contactNumber}</td>
                 <td>{user.customerCity}</td>
+                <td></td>
                 <td>{user.vehicleModel}</td>
                 <td>{user.appointmentDate}</td>
                 <td>{user.serviceType}</td>

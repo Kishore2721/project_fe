@@ -21,14 +21,12 @@ const AddEmployee = () => {
 
   const [addNewEmp,setAddNewEmp] = useState({
     id: "",
-      firstName: "",
-      lastName:"",
+      name: "",
       email:"",
       password:"",
-      contactNumber: "",
+      phone: "",
       city:"",
       state:"",
-      zipCode:"",
       assignedWorks: "",
       workStatus: "",
       joinDate: "",
@@ -56,8 +54,6 @@ const AddEmployee = () => {
 
   const handleSubmit =(event) =>{
     event.preventDefault();
-    // const fullId="FMR"+addNewEmp.id;
-    // const fullDetails ={...addNewEmp ,id : fullId}
     if(!addNewEmp.id || !addNewEmp.firstName || !addNewEmp.lastName || !addNewEmp.email ||!addNewEmp.password ||!addNewEmp.contactNumber || !addNewEmp.city||!addNewEmp.state || !addNewEmp.joinDate ||!addNewEmp.zipCode){
       setErrormsg("All fields are required");
       setTimeout(() => {
@@ -110,13 +106,9 @@ const AddEmployee = () => {
                     />
                   
                 </Form.Group>
-                <Form.Group controlId="firstName" className="w-100 m-2">
-                  <Form.Label>First name :</Form.Label>
-                  <Form.Control required name="firstName" value={addNewEmp.firstName} type="text" placeholder="First name" onChange={handleChange} />
-                </Form.Group>
-                <Form.Group controlId="lastName" className="w-100 m-2">
-                  <Form.Label>Last name :</Form.Label>
-                  <Form.Control required  name="lastName" value={addNewEmp.lastName} type="text" placeholder="Last name" onChange={handleChange} />
+                <Form.Group controlId="name" className="w-100 m-2">
+                  <Form.Label>Name :</Form.Label>
+                  <Form.Control required name="name" value={addNewEmp.name} type="text" placeholder="Name" onChange={handleChange} />
                 </Form.Group>
                 <Form.Group controlId="emailId" className="w-100 m-2">
                   <Form.Label>Email :</Form.Label>
@@ -140,14 +132,14 @@ const AddEmployee = () => {
                 </Form.Group>
               </Col>
               <Col md={6} className="d-flex flex-column align-items-center">
-                <Form.Group controlId="conatctNumber" className="w-100 m-2">
-                  <Form.Label>Contact :</Form.Label>
+                <Form.Group controlId="phone" className="w-100 m-2">
+                  <Form.Label>Phone :</Form.Label>
                   <Form.Control
                     required
-                    name="contactNumber"
-                    value={addNewEmp.contactNumber}
+                    name="phone"
+                    value={addNewEmp.phone}
                     type="number"
-                    placeholder="Contact Number"
+                    placeholder="Phone Number"
                     onChange={handleChange}
                     />
                 </Form.Group>
@@ -167,13 +159,6 @@ const AddEmployee = () => {
                   <Form.Control type="text" name="state" value={addNewEmp.state} placeholder="State" required onChange={handleChange} />
                   <Form.Control.Feedback type="invalid">
                     Please provide a valid state.
-                  </Form.Control.Feedback>
-                </Form.Group>
-                <Form.Group className="w-100 m-2" controlId="zipcode">
-                  <Form.Label>Zip :</Form.Label>
-                  <Form.Control type="text" name="zipCode" value={addNewEmp.zipCode} placeholder="Zip" required onChange={handleChange} />
-                  <Form.Control.Feedback type="invalid">
-                    Please provide a valid zip.
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>

@@ -23,9 +23,9 @@ const EmployeeDetails = () => {
         <Card.Body>
           <div className="d-flex justify-content-between ms-2 me-2 mb-2">
             <span><i className="bi bi-person-fill"></i> <strong>Name : </strong>{" "}
-            {employee.firstName}{employee.lastName}</span>
-            <span><i className="bi bi-telephone-fill"></i> <strong>Contact : </strong>{" "}
-            {employee.contactNumber}</span>
+            {employee.name}</span>
+            <span><i className="bi bi-telephone-fill"></i> <strong>Phone : </strong>{" "}
+            {employee.phone}</span>
             <span><i className="bi bi-calendar2-check"></i>{" "}
             <strong>Joined Date : </strong> {employee.joinDate}</span>
           </div>
