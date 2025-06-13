@@ -1,4 +1,3 @@
-import './App.css'
 import { BrowserRouter,Route, Routes } from 'react-router-dom'
 import UserCarDetails from './components/UserCarDetails'
 import UserStatus from './components/UserStatus'

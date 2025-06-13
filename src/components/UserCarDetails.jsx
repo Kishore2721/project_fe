@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Form, Button, Row, Col, CardHeader } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import './UserCarDetails.css'
 
 const UserCarDetails = () => {
   const navigate = useNavigate();
@@ -29,10 +30,11 @@ const UserCarDetails = () => {
   };
 
   return (
-    <div className="container ">
+    <div className="container w-50 mt-5">
           <Card>
-            <CardHeader >
-              <Card.Title className="text-center ">Book Your Service Appointment</Card.Title>
+            <CardHeader className='d-flex align-items-center bg-color'>
+              <i className='bi bi-arrow-left me-2 icon'></i>
+              <h1 className="text-center ">Book Your Service Appointment</h1>
              
             </CardHeader>
             <Card.Body>
@@ -99,14 +101,14 @@ const UserCarDetails = () => {
                   </Button>
                 </div>
 
-                <div className="mt-3 text-center">
-                  <p className="mb-2">Already filled the form?</p>
-                  <Button 
-                    variant="outline-secondary" 
+                <div className="mt-3  d-flex align-items-center justify-content-center fw-medium">
+                  <p className="me-2 fw-50">Already filled the form?</p>
+                   <p> <a className='text-decoration-none'
                     onClick={() => navigate('/status')}
                   >
                     Check Service Status
-                  </Button>
+                  </a></p> 
+                
                 </div>
               </Form>
             </Card.Body>

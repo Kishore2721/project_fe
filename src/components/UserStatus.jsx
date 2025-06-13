@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Table, Button, Badge, CardHeader } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
+import './UserStatus.css'
 
 const UserStatus = () => {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ const UserStatus = () => {
   const appointmentData = location.state || {
     
   };
-
+ 
   // Mock status data
   const statusData = {
     isCompleted: false,
@@ -16,14 +17,14 @@ const UserStatus = () => {
   };
 
   return (
-    <div className="container mt-20">
+    <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-md-20">
 
           <Card>
-            <CardHeader className="d-flex align-items-center">
-               <i className="bi bi-arrow-left btn btn-warning me-2" onClick={() => navigate('/')}></i>
-              <Card.Title>Your Service Status</Card.Title>
+            <CardHeader className="d-flex align-items-center  bg-color">
+               <i className="bi bi-arrow-left me-2 icon" onClick={() => navigate('/')}></i>
+              <h1>Your Service Status</h1>
             </CardHeader>
             <Card.Body >
 
@@ -61,7 +62,8 @@ const UserStatus = () => {
 
               <div className="mt-8">
                 <Card>
-                  <Card.Header>Appointment Details</Card.Header>
+                  <Card.Header className='card2-bg-color'>
+                    <h3>Appointment Details</h3></Card.Header>
                   <Card.Body>
                     <p><strong>Complaint/Issue:</strong> {appointmentData.complaint}</p>
                     <p><strong>Appointment Date:</strong> {new Date(appointmentData.appointmentDate).toLocaleString()}</p>
