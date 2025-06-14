@@ -1,72 +1,67 @@
-import React from 'react';
-import { Card, Table, Button, Badge, CardHeader } from 'react-bootstrap';
-import { useLocation, useNavigate } from 'react-router-dom';
-import './UserStatus.css'
+import React from "react";
+import { Card, Table, Button, Badge, CardHeader } from "react-bootstrap";
+import { useLocation, useNavigate } from "react-router-dom";
+import "./UserStatus.css";
 
 const UserStatus = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const appointmentData = location.state || {
-    
-  };
- 
+  const appointmentData = location.state || {};
+
   // Mock status data
   const statusData = {
     isCompleted: false,
-    completionDate: '2023-05-21T15:00'
+    completionDate: "2023-05-21T15:00",
   };
 
   return (
     <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-md-20">
-
           <Card>
-            <CardHeader className="d-flex align-items-center  bg-color">
-               <i className="bi bi-arrow-left me-2 icon" onClick={() => navigate('/')}></i>
-              <h1>Your Service Status</h1>
+            <CardHeader className="d-flex align-items-center justify-content-between bg-color">
+              <div className="d-flex align-items-center">
+                <i
+                  className="bi bi-arrow-left me-2 icon"
+                  onClick={() => navigate("/")}
+                ></i>
+                <h3>Your Service Status</h3>
+              </div>
+              <h3 className="me-3">Name : Kiran</h3>
             </CardHeader>
-            <Card.Body >
-
-              
-              <Table striped bordered hover responsive>
-                <thead>
-                  <tr>
-                    <th>User Name</th>
-                    <th>Vehicle Model</th>
-                    <th>Service Type</th>
-                    <th>Status</th>
-                    <th>Completion Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>{appointmentData.username}</td>
-                    <td>{appointmentData.vehicleModel}</td>
-                    <td>{appointmentData.serviceType}</td>
-                    <td>
-                      {statusData.isCompleted ? (
-                        <Badge bg="success">Completed</Badge>
-                      ) : (
-                        <Badge bg="warning">In Progress</Badge>
-                      )}
-                    </td>
-                    <td>
-                      {statusData.isCompleted 
-                        ? new Date(statusData.completionDate).toLocaleString()
-                        : 'Estimated: ' + new Date(statusData.completionDate).toLocaleString()}
-                    </td>
-                  </tr>
-                </tbody>
-              </Table>
-
-              <div className="mt-8">
+            <Card.Body>
+              <div className="mt-3">
                 <Card>
-                  <Card.Header className='card2-bg-color'>
-                    <h3>Appointment Details</h3></Card.Header>
+                  <Card.Header className="card2-bg-color">
+                    <h3>Appointment Details</h3>
+                  </Card.Header>
                   <Card.Body>
-                    <p><strong>Complaint/Issue:</strong> {appointmentData.complaint}</p>
-                    <p><strong>Appointment Date:</strong> {new Date(appointmentData.appointmentDate).toLocaleString()}</p>
+                    <Table striped bordered hover responsive>
+                      <thead>
+                        <tr>
+                          <th>Registration Number</th>
+                          <th>Vehicle Model</th>
+                          <th>Service Type</th>
+                          <th>Requested Time</th>
+                          <th>Assigned Time</th>
+                          <th>Completed Time</th>
+                          <th>Status</th>
+                          <th>Completion Date</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </Table>
                   </Card.Body>
                 </Card>
               </div>
