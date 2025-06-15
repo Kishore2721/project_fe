@@ -9,7 +9,7 @@ function LoginPage() {
       {/* Navigation Bar */}
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div className="container-fluid">
-          <img src="car-logo.png" width={50} alt="carLogo" />
+          <img src="car-logo.png" className="img-w" alt="carLogo" />
           <a className="navbar-brand fw-bold" href="#">FixMyRide</a>
           <button
             className="navbar-toggler"
