@@ -29,9 +29,7 @@ function ForgetPass() {
       {/* Navigation Bar */}
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div className="container-fluid">
-          <button className="btn btn-outline-light me-3" onClick={() => navigate(-1)}>
-            ←
-          </button>
+          <img src="car-logo.png" width={50} alt="carLogo" />
           <a className="navbar-brand fw-bold" href="#">FixMyRide</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span className="navbar-toggler-icon"></span>
@@ -53,37 +51,44 @@ function ForgetPass() {
           backgroundImage: 'url("https://wallpaperaccess.com/full/2085201.jpg")',
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "90vh",
+          height: "100vh",
           width: "100vw",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          paddingTop: "20px",
-          marginTop:"60px",
-          marginBottom:"100px"
+          padding: "60px",
+          marginTop:"40px"
 
         }}
       >
- <div
+ <div className="card"
   style={{
     backgroundColor: "rgba(255, 255, 255, 0.95)",
-    padding: "10px 15px", // reduced vertical padding
     borderRadius: "10px",
     maxWidth: "400px",
     width: "100%",
     boxShadow: "0 0 15px rgba(0,0,0,0.3)",
   }}
 >
+      <div className="card-header" style={{
+                backgroundColor: "#124363",
+   color: "white",}}>
+        <div className="d-flex align-items-center"> 
+          <i className="bi bi-arrow-left" style={{fontSize:"25px"}}  onClick={() => navigate(-1)}></i>
+          <h2 className="text-center fw-bold">Reset Your Password</h2>
+        </div>
+      </div>
 
 
-          <h2 className="text-center mb-4 fw-bold">Reset Your Password</h2>
-          <p className="text-muted mb-4">
+        
+
+          <form onSubmit={handleSubmit}>
+          <div className="card-body">
+              <p className="text-muted mb-4">
             Your identity has been verified. Please enter a new password to reset your account.
             <br />
             
           </p>
-
-          <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label className="form-label">Email Address</label>
               <input
@@ -91,7 +96,7 @@ function ForgetPass() {
                 className="form-control"
                 value={email}
                 readOnly
-              />
+                />
             </div>
 
             <div className="mb-3">
@@ -103,7 +108,7 @@ function ForgetPass() {
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
                 required
-              />
+                />
             </div>
 
             <div className="mb-4">
@@ -115,7 +120,7 @@ function ForgetPass() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
-              />
+                />
             </div>
 
             <div className="d-grid gap-3">
@@ -124,6 +129,7 @@ function ForgetPass() {
               </button>
               
             </div>
+                </div>
           </form>
         </div>
       </div>

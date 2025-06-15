@@ -9,14 +9,7 @@ function LoginPage() {
       {/* Navigation Bar */}
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div className="container-fluid">
-          {/* Left Arrow for Go Back */}
-          <button
-            className="btn btn-outline-light me-3"
-            onClick={() => navigate('/')}
-          >
-            ←
-          </button>
-
+          <img src="car-logo.png" width={50} alt="carLogo" />
           <a className="navbar-brand fw-bold" href="#">FixMyRide</a>
           <button
             className="navbar-toggler"
@@ -46,7 +39,7 @@ function LoginPage() {
       </nav>
 
       {/* Login Card Section */}
-      <div
+      <div 
         style={{
           backgroundImage: 'url("https://wallpaperaccess.com/full/2085201.jpg")',
           backgroundSize: "cover",
@@ -60,11 +53,11 @@ function LoginPage() {
           marginTop:"40px"
         }}
       >
-        <div
-          className="card"
+        <div className="card"
+          // className="card-header"
           style={{
             backgroundColor: "rgba(255, 255, 255, 0.95)",
-            padding: "20px",
+            // backgroundColor:"red",
             borderRadius: "12px",
             boxShadow: "0 10px 25px rgba(0,0,0,0.3)",
             width: "50%",
@@ -72,9 +65,23 @@ function LoginPage() {
             margin: "100px",
           }}
         >
-          <h2 className="text-center mb-4 fw-bold">Welcome to FixMyRide</h2>
+          <div className="card-header" style={{
+                backgroundColor: "#124363",
+   color: "white",}}> 
+
+          <div className=" d-flex align-items-center mb-3">
+
+          {/* Left Arrow for Go Back */}
+          <i className="bi bi-arrow-left me-2" onClick={() => navigate('/')} style={{
+            fontSize:"25px"
+          }} ></i>
+          <h2 className="text-center  fw-bold">Welcome to FixMyRide</h2>
+          </div>
+          </div>
 
           <form>
+            <div className="card-body">
+
             <div className="mb-3">
               <label className="form-label fw-semibold">Registered Name</label>
               <input
@@ -82,7 +89,7 @@ function LoginPage() {
                 name="userName"
                 placeholder="Enter your registered name"
                 className="form-control"
-              />
+                />
             </div>
 
             <div className="mb-3">
@@ -92,17 +99,18 @@ function LoginPage() {
                 name="userEmail"
                 placeholder="Enter your registered email"
                 className="form-control"
-              />
+                />
             </div>
+          <div className="mb-3">
 
             <div className=" d-flex justify-content-between">
               <label className="form-label fw-semibold">Password</label>
                 {/* Forgot Password */}
               <span
-                className="text-danger fw-semibold"
+                className="text-primary fw-semibold"
                 style={{ cursor: "pointer", textDecoration: "underline" }}
                 onClick={() => navigate("/ForgotPass")}
-              >
+                >
                 Forgot Password?
               </span>
               
@@ -112,7 +120,8 @@ function LoginPage() {
                 name="userPassword"
                 placeholder="Enter your password"
                 className="form-control"
-              />
+                />
+                </div>
 
 
             <div className="d-grid mb-4">
@@ -121,10 +130,11 @@ function LoginPage() {
                 padding ="50px"
                 className="btn btn-primary"
                 onClick={() => navigate("/UserCarDetails")}
-              >
+                >
                 Login
               </button>
             </div>
+                </div>
           </form>
         </div>
       </div>
