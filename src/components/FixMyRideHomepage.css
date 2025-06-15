@@ -1,9 +1,0 @@
-.carousel img {
-  object-fit: cover;
-  height: 90vh;
-}
-
-.card:hover {
-  transform: scale(1.02);
-  transition: 0.3s ease-in-out;
-}
