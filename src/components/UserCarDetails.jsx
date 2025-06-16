@@ -79,9 +79,35 @@ function UserCarDetails() {
                 <option value="" disabled>
                   Select Service Type
                 </option>
-                <option value="General">General</option>
-                <option value="Periodic">Periodic</option>
-                <option value="Special Complaint">Special Complaint</option>
+                
+            <option value="Periodic">Periodic</option>
+            <option value="Engine Issues">Engine Issues</option>
+            <option value="Brake Problems">Brake Problems</option>
+            <option value="Electrical Fault">Electrical Fault</option>
+            <option value="AC Not Working">AC Not Working</option>
+            <option value="Battery Replacement">Battery Replacement</option>
+            <option value="Oil Change">Oil Change</option>
+            <option value="Suspension Issues">Suspension Issues</option>
+            <option value="Transmission Trouble">Transmission Trouble</option>
+            <option value="Fuel System Problem">Fuel System Problem</option>
+            <option value="Noise or Vibration">Noise or Vibration</option>
+            <option value="Tyre Replacement">Tyre Replacement</option>
+            <option value="Wheel Alignment">Wheel Alignment</option>
+            <option value="Coolant Leak">Coolant Leak</option>
+            <option value="Overheating Issue">Overheating Issue</option>
+            <option value="Steering Problem">Steering Problem</option>
+            <option value="Clutch Issue">Clutch Issue</option>
+            <option value="Horn Not Working">Horn Not Working</option>
+            <option value="Headlight Issue">Headlight Issue</option>
+            <option value="Wiper Malfunction">Wiper Malfunction</option>
+            <option value="Dashboard Warning Light">Dashboard Warning Light</option>
+            <option value="Door Lock Problem">Door Lock Problem</option>
+            <option value="Paint or Scratch Repair">Paint or Scratch Repair</option>
+            <option value="Windshield Damage">Windshield Damage</option>
+            <option value="Sensor Malfunction">Sensor Malfunction</option>
+            <option value="Exhaust Smoke">Excessive Exhaust Smoke</option>
+
+
               </select>
                <input
                 type="text"
