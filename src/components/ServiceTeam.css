@@ -1,0 +1,10 @@
+.service-team-card-bg {
+  background-color: steelblue;
+}
+
+.delete-btn {
+  background-color: #D7263D;
+  width: 100px;
+  padding: 1px;
+  border: white;
+}

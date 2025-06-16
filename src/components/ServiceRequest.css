@@ -1,0 +1,14 @@
+.request-bg-img{
+     background-image: url('./bg_img.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.icon {
+  font-size: 25px;
+}
+.request-header-bg{
+    background-color: #124363;
+    color: white;
+}

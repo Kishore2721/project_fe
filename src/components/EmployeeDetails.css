@@ -1,0 +1,17 @@
+.icon{
+    font-size: 25px;
+}
+.emp-details-header{
+    background-color: #124363;
+   color: white;
+}
+.emp-details-header-2{
+    background-color: steelblue;
+    color: white;
+}
+.emp-detaisl-bg{
+    background-image: url('./bg_img.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

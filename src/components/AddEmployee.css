@@ -1,0 +1,23 @@
+.add-emp-bg {
+  background-image: url('./bg_img.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.icon {
+  font-size: 25px;
+}
+.admin-header-bg{
+    background-color: #124363;
+   color: white;
+}
+
+.add-emp-btn{
+     background-color: white;
+     color: black;
+     margin: 10px;
+     width: 100px;
+}
+.add-emp-btn:hover{
+    background-color: #3D9970;
+}

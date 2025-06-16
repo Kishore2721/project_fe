@@ -1,5 +1,10 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import ServiceRequest from './components/ServiceRequest';
+import ServiceTeam from './components/ServiceTeam';
+import EmployeeDetails from './components/EmployeeDetails';
+import AddEmployee from './components/AddEmployee';
+import Admin from "./components/Admin"
 import Registerpage from "./components/RegisterPage";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
 
 import FixMyRideHomepage from "./components/FixMyRideHomepage";
@@ -12,10 +17,9 @@ import UpdateEmployee from "./components/UpdateEmployee";
 
 function App() {
   return (
-    <div>
-      <Router>
-        <Routes>
-          <Route path="/" element={<FixMyRideHomepage />}></Route>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<FixMyRideHomepage />}></Route>
           <Route path="/Registerpage" element={<Registerpage />}></Route>
           <Route path="/LoginPage" element={<LoginPage />}></Route>
 
@@ -25,10 +29,13 @@ function App() {
           <Route path="/UserStatus" element={<UserStatus />}></Route>
           <Route path="/employee" element={<Employee />}></Route>
           <Route path="/UpdateEmployee" element={<UpdateEmployee />}></Route>
-        </Routes>
-      </Router>
-    </div>
+        <Route path='/admin' element={<Admin />}></Route>
+        <Route path='/servicerequest' element={<ServiceRequest />}></Route>
+        <Route path='/serviceteam' element={<ServiceTeam />}></Route>
+        <Route path='/employeedetails' element={<EmployeeDetails />}></Route>
+        <Route path='/addemployee' element={<AddEmployee />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
 export default App;
