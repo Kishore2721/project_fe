@@ -11,9 +11,12 @@ function App() {
     <div>
       <Router>
         <Routes>
+
           <Route path='/Registerpage' element={<Registerpage />}></Route>
           <Route path='/LoginPage' element={<LoginPage />}></Route>
           <Route path='/' element={<FixMyRideHomepage />}></Route>
+
+           
           <Route path='/ForgotPass' element={<Forgotpass />}></Route>
         </Routes>
       </Router>
