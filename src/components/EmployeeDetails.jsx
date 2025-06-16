@@ -1,7 +1,5 @@
-import React from "react";
 import { Card, CardBody, CardHeader, Container, Table } from "react-bootstrap";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import Button from "react-bootstrap/Button";
+import { useLocation, useNavigate} from "react-router-dom";
 import './EmployeeDetails.css'
 
 const EmployeeDetails = () => {

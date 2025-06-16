@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Card, Row, Col, CardFooter, CardBody } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
 import './ServiceTeam.css'
 
 const ServiceTeam = ({ employees, setEmployees }) => {
