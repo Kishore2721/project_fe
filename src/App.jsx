@@ -2,12 +2,6 @@
 import Registerpage from './components/RegisterPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginPage from './components/LoginPage';
-import UserCarDetails from './components/UserCarDetails';
-import UserStatus from './components/UserStatus';
-import EmployeeDetails from './components/EmployeeDetails';
-import EmployeeLogin from './components/EmployeeLogin';
-import AdminLogin from './components/AdminLogin';
-import AdminPage from './components/AdminPage';
 import FixMyRideHomepage from './components/FixMyRideHomepage';
 import Forgotpass from './components/Forgotpass';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -19,12 +13,6 @@ function App() {
         <Routes>
           <Route path='/Registerpage' element={<Registerpage />}></Route>
           <Route path='/LoginPage' element={<LoginPage />}></Route>
-          <Route path='/UserCarDetails' element={<UserCarDetails />}></Route>
-          <Route path='/UserStatus' element={<UserStatus />}></Route>
-          <Route path='/EmployeeLogin' element={<EmployeeLogin />}></Route>
-          <Route path='/EmployeeDetails' element={<EmployeeDetails />}></Route>
-          <Route path='/AdminLogin' element={<AdminLogin />}></Route>
-          <Route path='/AdminPage' element={<AdminPage />}></Route>
           <Route path='/' element={<FixMyRideHomepage />}></Route>
           <Route path='/ForgotPass' element={<Forgotpass />}></Route>
         </Routes>
