@@ -145,7 +145,6 @@ const UserCarDetails = () => {
             </div>
           </Form>
         </Card.Body>
-        <Card.Footer className="bg-color"></Card.Footer>
       </Card>
     </div>
   );

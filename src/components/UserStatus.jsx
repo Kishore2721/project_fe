@@ -42,16 +42,14 @@ const UserStatus = () => {
                           <th>Registration Number</th>
                           <th>Vehicle Model</th>
                           <th>Service Type</th>
-                          <th>Requested Time</th>
-                          <th>Assigned Time</th>
-                          <th>Completed Time</th>
+                          <th>Requested Time and Date</th>
+                          <th>Assigned Time and Date</th>
                           <th>Status</th>
-                          <th>Completion Date</th>
+                          <th>Completed Time and Date</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td></td>
                           <td></td>
                           <td></td>
                           <td></td>
