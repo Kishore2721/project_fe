@@ -7,7 +7,7 @@ export default function FixMyRideHomepage() {
 
   return (
     <div>
-      {/* Navigation Bar (not fixed anymore) */}
+      
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div className="container-fluid">
           <img src="car-logo.png" width={50} alt="carLogo" />
@@ -39,7 +39,7 @@ export default function FixMyRideHomepage() {
         </div>
       </nav>
 
-      {/* Hero Carousel – Only First Image */}
+      
       <div id="heroCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active position-relative">
