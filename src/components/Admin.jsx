@@ -161,7 +161,7 @@ const Admin = () => {
       <Container className="w-100 mt-4 mb-3">
         <Card  bg="light">
            {/* style={{ backgroundColor: "rgba(255, 255, 255, 0.9)"}} */}
-          <Card.Header className="d-flex align-items-center bg-color">
+          <Card.Header className="d-flex align-items-center admin-bg-color">
             <i className="bi bi-arrow-left icon me-2 "></i>
             <h1>Admin Control Panel</h1>
           </Card.Header>
