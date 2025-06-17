@@ -16,16 +16,16 @@ const EmployeeDetails = () => {
              <i className="bi bi-arrow-left icon me-2" onClick={()=>navigate('/')}></i>
            <h1>Work History</h1>
           </div>
-          <strong> Employee ID : {employee.id}</strong>
+          <strong> Employee ID : {employee.empId}</strong>
         </Card.Header>
         <Card.Body>
           <div className="d-flex justify-content-between ms-2 me-2 mb-2">
             <span><i className="bi bi-person-fill"></i> <strong>Name : </strong>{" "}
-            {employee.name}</span>
+            {employee.empName}</span>
             <span><i className="bi bi-telephone-fill"></i> <strong>Phone : </strong>{" "}
-            {employee.phone}</span>
+            {employee.empPhone}</span>
             <span><i className="bi bi-calendar2-check"></i>{" "}
-            <strong>Joined Date : </strong> {employee.joinDate}</span>
+            <strong>Joined Date : </strong> {employee.empJoinDate}</span>
           </div>
          
          <Card>
