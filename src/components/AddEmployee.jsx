@@ -1,17 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './AddEmployee.css'
 
-import {
-    Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Col,
-  Container,
-  Form,
-  Row,
-} from "react-bootstrap";
+import {Button,Card,CardBody, CardFooter, CardHeader, Col, Container, Form, Row,} from "react-bootstrap";
 
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -20,16 +10,16 @@ const AddEmployee = () => {
   const [employees,setEmployees]= useState([]);
 
   const [addNewEmp,setAddNewEmp] = useState({
-    id: "",
-      name: "",
-      email:"",
-      password:"",
-      phone: "",
-      city:"",
-      state:"",
+    empId: "",
+      empName: "",
+      empEmail:"",
+      empPassword:"",
+      empPhone: "",
+      empCity:"",
+      empState:"",
       assignedWorks: "",
       workStatus: "",
-      joinDate: "",
+      empJoinDate: "",
     
   });
 
@@ -54,7 +44,7 @@ const AddEmployee = () => {
 
   const handleSubmit =(event) =>{
     event.preventDefault();
-    if(!addNewEmp.id || !addNewEmp.firstName || !addNewEmp.lastName || !addNewEmp.email ||!addNewEmp.password ||!addNewEmp.contactNumber || !addNewEmp.city||!addNewEmp.state || !addNewEmp.joinDate ||!addNewEmp.zipCode){
+    if(!addNewEmp.empId || !addNewEmp.empName ||!addNewEmp.empEmail ||!addNewEmp.empPassword ||!addNewEmp.empPhone || !addNewEmp.empCity||!addNewEmp.empState || !addNewEmp.empJoinDate ){
       setErrormsg("All fields are required");
       setTimeout(() => {
         setErrormsg("");
@@ -99,7 +89,7 @@ const AddEmployee = () => {
                       type="text"
                       placeholder="Employee ID"
                       name="id"
-                      value={addNewEmp.id}
+                      value={addNewEmp.empId}
                       aria-describedby="empId"
                       required
                       onChange={handleChange}
@@ -108,11 +98,11 @@ const AddEmployee = () => {
                 </Form.Group>
                 <Form.Group controlId="name" className="w-100 m-2">
                   <Form.Label>Name :</Form.Label>
-                  <Form.Control required name="name" value={addNewEmp.name} type="text" placeholder="Name" onChange={handleChange} />
+                  <Form.Control required name="name" value={addNewEmp.empName} type="text" placeholder="Name" onChange={handleChange} />
                 </Form.Group>
                 <Form.Group controlId="emailId" className="w-100 m-2">
                   <Form.Label>Email :</Form.Label>
-                  <Form.Control required name="email" value={addNewEmp.email} type="email" placeholder="Email"  onChange={handleChange}/>
+                  <Form.Control required name="email" value={addNewEmp.empEmail} type="email" placeholder="Email"  onChange={handleChange}/>
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group controlId="password" className="w-100 m-2">
@@ -137,7 +127,7 @@ const AddEmployee = () => {
                   <Form.Control
                     required
                     name="phone"
-                    value={addNewEmp.phone}
+                    value={addNewEmp.empPhone}
                     type="number"
                     placeholder="Phone Number"
                     onChange={handleChange}
@@ -145,18 +135,18 @@ const AddEmployee = () => {
                 </Form.Group>
                 <Form.Group className="w-100 m-2" controlId="joinedDate">
                   <Form.Label>Joined Date :</Form.Label>
-                  <Form.Control type="date" required name="joinDate" value={addNewEmp.joinDate} onChange={handleChange}></Form.Control>
+                  <Form.Control type="date" required name="joinDate" value={addNewEmp.empJoinDate} onChange={handleChange}></Form.Control>
                 </Form.Group>
                 <Form.Group className="w-100 m-2" controlId="city">
                   <Form.Label>City :</Form.Label>
-                  <Form.Control type="text" name="city" value={addNewEmp.city} placeholder="City" required onChange={handleChange} />
+                  <Form.Control type="text" name="city" value={addNewEmp.empCity} placeholder="City" required onChange={handleChange} />
                   <Form.Control.Feedback type="invalid">
                     Please provide a valid city.
                   </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group className="w-100 m-2" controlId="state">
                   <Form.Label>State :</Form.Label>
-                  <Form.Control type="text" name="state" value={addNewEmp.state} placeholder="State" required onChange={handleChange} />
+                  <Form.Control type="text" name="state" value={addNewEmp.empState} placeholder="State" required onChange={handleChange} />
                   <Form.Control.Feedback type="invalid">
                     Please provide a valid state.
                   </Form.Control.Feedback>
