@@ -171,14 +171,14 @@ const Admin = () => {
 
             <div className=" d-flex justify-content-around mb-4 mt-4">
               <Card bg="primary" className="p-3 shadow-sm rounded-3 text-white align-items-center card-width">
-                <i class="bi bi-people-fill icon "></i>
+                <i className="bi bi-people-fill icon "></i>
                 <div className="text-center">
                   <h6>Total Employees</h6>
                 <h3>{employees?.length || 0}</h3>
                 </div>
               </Card>
               <Card bg="primary" className="p-3 shadow-sm rounded-3 text-white align-items-center card-width">
-                <i class="bi bi-gear-fill icon"></i>
+                <i className="bi bi-gear-fill icon"></i>
                 <div className="text-center">
                   <h6>Total Service</h6>
                 <h3>{serviceRequest?.length || 0}</h3>

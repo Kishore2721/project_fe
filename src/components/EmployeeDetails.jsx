@@ -13,7 +13,7 @@ const EmployeeDetails = () => {
       <Card>
         <Card.Header className="text-center d-flex align-items-center justify-content-between emp-details-header">
           <div className="d-flex align-items-center">
-             <i className="bi bi-arrow-left icon me-2" onClick={()=>navigate('/')}></i>
+             <i className="bi bi-arrow-left icon me-2" onClick={()=>navigate('/admin')}></i>
            <h1>Work History</h1>
           </div>
           <strong> Employee ID : {employee.id}</strong>

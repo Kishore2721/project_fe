@@ -72,7 +72,7 @@ function RegisterPage() {
         >
         {/* Top Row: Go Back button + Heading */}
         
-          <div className="card-header " style={{
+          <div className="card-header" style={{
             backgroundColor: "#124363",
             color: "white",
             
