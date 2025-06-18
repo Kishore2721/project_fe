@@ -1,30 +1,44 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 function RegisterPage() {
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
+  const [user, setUser] = useState({
+    
     userName: "",
     userEmail: "",
-    userNumber: "",
+   
     userPassword: "",
+    mobileNumber:"",
+    userPlace:""
   });
-
-  const handleChange = (e) => {
+ async function handleSubmit(event) {
+    event.preventDefault();
+    const response = await axios.post("http://localhost:9090/user/add", user);
+    if (response.data.userId !== null && response.status == 201) {
+      alert("user added successfully");
+      setUser({
+       userName: "",
+    userEmail: "",
+   
+    userPassword: "",
+    mobileNumber:"",
+    userPlace:""
+      })
+    }
+  }
+const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
+    setUser((prevData) => ({
       ...prevData,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Registration successful!");
-    console.log(formData);
-  };
+ 
 
   return (
     <div>
@@ -96,7 +110,7 @@ function RegisterPage() {
               type="text"
               name="userName"
               className="form-control"
-              value={formData.userName}
+              value={user.userName}
               onChange={handleChange}
               placeholder="Enter your name"
               required
@@ -109,7 +123,7 @@ function RegisterPage() {
               type="email"
               name="userEmail"
               className="form-control"
-              value={formData.userEmail}
+              value={user.userEmail}
               onChange={handleChange}
               placeholder="Enter your email"
               required
@@ -120,9 +134,9 @@ function RegisterPage() {
             <label className="form-label">Contact Number</label>
             <input
               type="number"
-              name="userNumber"
+              name="mobileNumber"
               className="form-control"
-              value={formData.userNumber}
+              value={user.mobileNumber}
               onChange={handleChange}
               placeholder="Enter your number"
               required
@@ -135,9 +149,21 @@ function RegisterPage() {
               type="password"
               name="userPassword"
               className="form-control"
-              value={formData.userPassword}
+              value={user.userPassword}
               onChange={handleChange}
               placeholder="Set your password"
+              required
+              />
+          </div>
+           <div className="mb-3">
+            <label className="form-label">Place</label>
+            <input
+              type="text"
+              name="userPlace"
+              className="form-control"
+              value={user.userPlace}
+              onChange={handleChange}
+              placeholder="enter your place"
               required
               />
           </div>
