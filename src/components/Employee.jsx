@@ -192,7 +192,7 @@ const Employee = () => {
                       <td>
                         <select className="form-select">
                           <option className="completed">Completed</option>
-                          <option className="pending">Pending</option>
+                          <option className="pending">Started</option>
                           <option className="not-started">Not Started</option>
                         </select>
                       </td>
