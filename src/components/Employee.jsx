@@ -95,38 +95,24 @@ export default Employee;*/
 
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Employee.css';
+import { useState,useEffect } from 'react';
+import axios from 'axios';
 
 const Employee = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const employee = location.state;
 
-  const previousWorks = [
-    {
-      dateTime: '2024-04-12 10:30 AM',
-      customerName: 'Vishnu Dethan',
-      contact: '9876543210',
-      city: 'Trivandrum',
-      model: 'Ford Figo',
-      regNo: 'KL21Q3860',
-      serviceType: 'Oil Change',
-      completedOn: '2024-04-12 01:30 PM',
-      amount: '₹1,200',
-      status: 'Completed'
-    },
-    {
-      dateTime: '2023-12-03 09:00 AM',
-      customerName: 'Aiswarya R',
-      contact: '9988776655',
-      city: 'Chennai',
-      model: 'Suzuki Access',
-      regNo: 'TN10AB1234',
-      serviceType: 'Brake Pad Replacement',
-      completedOn: '2023-12-03 12:00 PM',
-      amount: '₹950',
-      status: 'Completed'
-    }
-  ];
+  const[users,setUsers]=useState([]);
+  async function getData() {
+     const response = await axios.get("http://localhost:9090/emp/viewall");
+     setUsers(response.data);
+  }
+  useEffect(() => {
+    getData();
+  }, []);
+
+  
 
   return (
     <div
@@ -224,20 +210,25 @@ const Employee = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {previousWorks.map((work, index) => (
+                       {users.map((work, index) => (
                         <tr key={index}>
-                          <td>{work.dateTime}</td>
+                          <td>{work.appointmentDateTime}</td>
                           <td>{work.customerName}</td>
-                          <td>{work.contact}</td>
-                          <td>{work.city}</td>
-                          <td>{work.model}</td>
-                          <td>{work.regNo}</td>
+                          <td>{work.contactNumber}</td>
+                          <td>{work.customerCity}</td>
+                          <td>{work.vehicleModel}</td>
+                          <td>{work.registrationNumber}</td>
                           <td>{work.serviceType}</td>
-                          <td>{work.amount}</td>
+                          <td>₹{work.billAmount}</td>
                           <td>{work.status}</td>
-                          <td>{work.completedOn}</td> {/* Last column */}
+                          <td>{work.completionDateTime}</td>
                         </tr>
                       ))}
+                      {users.length === 0 && (
+                        <tr>
+                          <td colSpan="10" className="text-center">No previous works found.</td>
+                        </tr>
+                      )}
                     </tbody>
                   </table>
                 </div>
