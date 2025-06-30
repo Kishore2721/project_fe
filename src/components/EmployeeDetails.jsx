@@ -1,11 +1,13 @@
 import { Card, CardBody, CardHeader, Container, Table } from "react-bootstrap";
 import { useLocation, useNavigate} from "react-router-dom";
 import './EmployeeDetails.css'
+import { useState } from "react";
+import axios from "axios";
 
 const EmployeeDetails = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const employee = location.state;
+ const employee = location.state?.employee;
   return (
       <div className="min-vh-100 d-flex align-items-start emp-detaisl-bg">
 
@@ -13,7 +15,7 @@ const EmployeeDetails = () => {
       <Card>
         <Card.Header className="text-center d-flex align-items-center justify-content-between emp-details-header">
           <div className="d-flex align-items-center">
-             <i className="bi bi-arrow-left icon me-2" onClick={()=>navigate('/')}></i>
+             <i className="bi bi-arrow-left icon me-2" onClick={()=>navigate('/admin')}></i>
            <h1>Work History</h1>
           </div>
           <strong> Employee ID : {employee.empId}</strong>

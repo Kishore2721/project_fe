@@ -14,6 +14,7 @@ import {
 } from "react-bootstrap";
 
 import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const AddEmployee = () => {
 
@@ -48,34 +49,30 @@ const AddEmployee = () => {
     setAddNewEmp({ ...addNewEmp, [name]: value });
   }
 
-   const [message, setMessage] = useState("");
-  const [errormsg, setErrormsg] = useState("");
-
-
-  const handleSubmit =(event) =>{
+  const handleSubmit =async(event) =>{
     event.preventDefault();
-    if(!addNewEmp.empId || !addNewEmp.empName ||!addNewEmp.empEmail ||!addNewEmp.empPassword ||!addNewEmp.empPhone || !addNewEmp.empCity||!addNewEmp.empState || !addNewEmp.empJoinDate ){
-      setErrormsg("All fields are required");
-      setTimeout(() => {
-        setErrormsg("");
-      }, 3000);
-      return;
-    }else {
-      setMessage("Employee Added Successfully");
-      setTimeout(() => {
-        setMessage("");
-      }, 3000);
-
-      return;
+    const response = await axios.post("http://localhost:9090/employee/addemp",addNewEmp);
+    if(response.data.empId !==null && response.status ===201 ){
+       alert("New Employee Added Successfully");
     }
+    setAddNewEmp({
+    empId: "",
+      empName: "",
+      empEmail:"",
+      empPassword:"",
+      empPhone: "",
+      empCity:"",
+      empState:"",
+      assignedWorks: "",
+      workStatus: "",
+      empJoinDate: "",
+    
+  })
   }
  
   const navigate = useNavigate();
   const goback =()=>{
-    navigate('/',{state:{
-      addedEmployee:[...employees,addNewEmp]
-    },
-  });
+    navigate('/admin');
   };
 
   return (
@@ -98,7 +95,7 @@ const AddEmployee = () => {
                     <Form.Control
                       type="text"
                       placeholder="Employee ID"
-                      name="id"
+                      name="empId"
                       value={addNewEmp.empId}
                       aria-describedby="empId"
                       required
@@ -108,18 +105,18 @@ const AddEmployee = () => {
                 </Form.Group>
                 <Form.Group controlId="name" className="w-100 m-2">
                   <Form.Label>Name :</Form.Label>
-                  <Form.Control required name="name" value={addNewEmp.empName} type="text" placeholder="Name" onChange={handleChange} />
+                  <Form.Control required name="empName" value={addNewEmp.empName} type="text" placeholder="Name" onChange={handleChange} />
                 </Form.Group>
                 <Form.Group controlId="emailId" className="w-100 m-2">
                   <Form.Label>Email :</Form.Label>
-                  <Form.Control required name="email" value={addNewEmp.empEmail} type="email" placeholder="Email"  onChange={handleChange}/>
+                  <Form.Control required name="empEmail" value={addNewEmp.empEmail} type="email" placeholder="Email"  onChange={handleChange}/>
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group controlId="password" className="w-100 m-2">
                   <Form.Label>Password :</Form.Label>
                   <Form.Control
                     type="password"
-                    name="password"
+                    name="empPassword"
                     value={addNewEmp.password}
                     placeholder="Enter password"
                     required
@@ -136,7 +133,7 @@ const AddEmployee = () => {
                   <Form.Label>Phone :</Form.Label>
                   <Form.Control
                     required
-                    name="phone"
+                    name="empPhone"
                     value={addNewEmp.empPhone}
                     type="number"
                     placeholder="Phone Number"
@@ -145,34 +142,25 @@ const AddEmployee = () => {
                 </Form.Group>
                 <Form.Group className="w-100 m-2" controlId="joinedDate">
                   <Form.Label>Joined Date :</Form.Label>
-                  <Form.Control type="date" required name="joinDate" value={addNewEmp.empJoinDate} onChange={handleChange}></Form.Control>
+                  <Form.Control type="date" required name="empJoinDate" value={addNewEmp.empJoinDate} onChange={handleChange}></Form.Control>
                 </Form.Group>
                 <Form.Group className="w-100 m-2" controlId="city">
                   <Form.Label>City :</Form.Label>
-                  <Form.Control type="text" name="city" value={addNewEmp.empCity} placeholder="City" required onChange={handleChange} />
+                  <Form.Control type="text" name="empCity" value={addNewEmp.empCity} placeholder="City" required onChange={handleChange} />
                   <Form.Control.Feedback type="invalid">
                     Please provide a valid city.
                   </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group className="w-100 m-2" controlId="state">
                   <Form.Label>State :</Form.Label>
-                  <Form.Control type="text" name="state" value={addNewEmp.empState} placeholder="State" required onChange={handleChange} />
+                  <Form.Control type="text" name="empState" value={addNewEmp.empState} placeholder="State" required onChange={handleChange} />
                   <Form.Control.Feedback type="invalid">
                     Please provide a valid state.
                   </Form.Control.Feedback>
                 </Form.Group>
               </Col>
             </Row>
-            <span
-                  style={{ color: "red", fontSize: 14, fontWeight: "bold" }}
-                >
-                  {errormsg}
-                </span>
-                <span
-                  style={{ color: "green", fontSize: 14, fontWeight: "bold" }}
-                >
-                  {message}
-                </span>
+           
           </CardBody>
           <CardFooter className="text-center admin-header-bg">
                 <Button type="submit" className=" add-emp-btn">Add</Button>
