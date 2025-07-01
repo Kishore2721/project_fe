@@ -195,7 +195,7 @@ const Admin = () => {
                   })
                 }
                 > 
-                  <i class="bi bi-plus me-2"></i>
+                  <i className="bi bi-plus me-2"></i>
                 Add Employee
               </button>
               <button
