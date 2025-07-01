@@ -141,7 +141,7 @@ const ServiceRequest = () => {
                 <td>{user.vehicleModel}</td>
                 <td>{user.appointmentDate}</td>
                 <td>{user.serviceType}</td>
-                <td><Button className="btn btn-success">Proceed</Button></td>
+                <td><Button className="btn btn-success" onClick={()=>navigate("/serviceteam")}>Proceed</Button></td>
                 <td><Button className="btn btn-danger">Reject</Button></td>
                 <td>
                   <select>
